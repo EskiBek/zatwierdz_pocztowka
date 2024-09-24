@@ -1,0 +1,52 @@
+﻿<Window x:Class="egzamin_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:egzamin_WPF"
+        mc:Ignorable="d"
+        Title="Nadaj Przesyłkę, PESEL: 00000000000" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <GroupBox Height="100px" HorizontalAlignment="Center" Width="200px" Margin="0 40 0 0">
+                <GroupBox.Header>
+                    Rodzaj przesyłki
+                </GroupBox.Header>
+                <StackPanel>
+                    <RadioButton IsChecked="true" x:Name="pocztowka">Pocztówka</RadioButton>
+                    <RadioButton x:Name="list">List</RadioButton>
+                    <RadioButton x:Name="paczka">Paczka</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            <Button Click="checkCena_Click" Height="20px" Width="200px">Sprawdź cenę</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="2" >
+            <GroupBox>
+                <GroupBox.Header>
+                    Dane adresowe
+                </GroupBox.Header>
+                <StackPanel Margin="10">
+                    
+                    <TextBlock Text="Ulica z numerem"></TextBlock>
+                    <TextBox x:Name="adres"></TextBox>
+
+                    <TextBlock Text="Kod pocztowy"></TextBlock>
+                    <TextBox x:Name="kodPocztowy"></TextBox>
+
+                    <TextBlock Text="Miasto"></TextBlock>
+                    <TextBox x:Name="miasto"></TextBox>
+
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <Image Source="pocztowka.png" Width="150px" Margin="25 250 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="zdjecie"></Image>
+        <Label Content="Cena: " Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 250 0 0" x:Name="cenaShow" FontSize="20"></Label>
+        <Button x:Name="zatwierdz" Click="zatwierdz_Click" Grid.ColumnSpan="2" Height="20px" VerticalAlignment="Bottom" Grid.Row="1">Zatwierdź</Button>
+    </Grid>
+</Window>
